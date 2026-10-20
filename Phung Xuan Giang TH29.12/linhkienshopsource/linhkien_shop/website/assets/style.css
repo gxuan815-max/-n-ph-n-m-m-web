@@ -1,0 +1,47 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f5f5f5;color:#333}
+a{color:#667eea;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.header{background:linear-gradient(135deg,#667eea,#764ba2);padding:14px 0;color:#fff}
+.header-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:24px;font-weight:700;color:#fff}
+nav a{color:#fff;margin-left:16px;font-size:14px}
+.badge{background:#f56565;border-radius:10px;padding:1px 7px;font-size:12px}
+main{padding:25px 20px;min-height:70vh}
+.footer{background:#333;color:#ccc;text-align:center;padding:18px 0;font-size:13px}
+.alert{padding:12px 16px;border-radius:6px;margin-bottom:18px}
+.alert.success{background:#dcfce7;color:#166534}.alert.error{background:#fee2e2;color:#991b1b}
+.filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+input,select,textarea{padding:10px 12px;border:1px solid #ddd;border-radius:6px;font:inherit;width:100%}
+.filter input,.filter select{width:auto;flex:1;min-width:140px}
+.btn{display:inline-block;padding:10px 18px;border:0;border-radius:6px;cursor:pointer;color:#fff;background:#667eea;font-size:14px}
+.btn.green{background:#48bb78}.btn.red{background:#f56565}.btn.gray{background:#888}.btn.sm{padding:6px 12px;font-size:13px}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);overflow:hidden}
+.card .img{height:150px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:44px}
+.card .img small{font-size:11px;letter-spacing:1px;margin-top:6px}
+.card .body{padding:14px}.card h3{font-size:15px;margin-bottom:8px;min-height:40px}
+.price{color:#667eea;font-weight:700;font-size:18px;margin-bottom:10px}
+.pager{display:flex;gap:6px;justify-content:center;margin:25px 0;flex-wrap:wrap}
+.pager a,.pager span{padding:7px 12px;background:#fff;border-radius:5px;border:1px solid #ddd}
+.pager .cur{background:#667eea;color:#fff;border-color:#667eea}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+th{background:#667eea;color:#fff;text-align:left;padding:12px}td{padding:12px;border-bottom:1px solid #eee;vertical-align:middle}
+.box{background:#fff;padding:24px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);margin-bottom:20px}
+.form-row{margin-bottom:14px}.form-row label{display:block;font-weight:600;margin-bottom:5px}
+.stars{color:#ffc107}.st{padding:4px 10px;border-radius:12px;font-size:12px;background:#e0e7ff}
+.stat div{background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}.stat b{display:block;font-size:26px;color:#667eea}
+
+/* Bố cục: float dự phòng cho trình duyệt cũ, CSS Grid cho trình duyệt hiện đại */
+.grid:after,.two:after,.stat:after{content:"";display:block;clear:both}
+.grid .card{float:left;width:23%;margin:0 1% 18px}
+.two>*{float:left;width:47%;margin-left:1.5%;margin-right:1.5%}
+.stat>div{float:left;width:15%;margin:0 .8% 16px;min-height:90px}
+@supports (display:grid){
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .grid .card{float:none;width:auto;margin:0}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .two>*{float:none;width:auto;margin-left:0;margin-right:0}
+  .stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+  .stat>div{float:none;width:auto;margin:0;min-height:0}
+}
+@media(max-width:700px){.two{grid-template-columns:1fr}.grid .card{width:98%}.two>*{width:97%}}
